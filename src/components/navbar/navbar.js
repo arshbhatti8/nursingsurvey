@@ -1,36 +1,44 @@
 import React,{Component} from 'react';
-import {Menu} from 'semantic-ui-react';
+import {Menu,Segment} from 'semantic-ui-react';
 
 class Navbar extends Component{
 
-state={};
+state={activeItem:"Home"};
 
-items= [{ key: 'editorials', name: 'Editorials',active:"true"},
-    { key: 'review', name: 'Reviews'},
-    { key: 'events', name: 'Upcoming Events', }];
+items= [{ key: 'Home', name: 'Home'},
+    { key: 'Charts', name: 'Charts'},
+    { key: 'References', name: 'References' }];
 
 handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
 render () {
-    const { activeItem } = this.state;
+    const {activeItem}=this.state;
     return(
-        <Menu attached="top"
-              inverted="true"
-              stackable="true"
-              widths="3"
-              >
-            {this.items.map(item =>{
-                return<Menu.Item
-                        name={item.name}
-                        onClick={this.handleItemClick}
-                        active={activeItem===item.name}
+        <div className="outerDiv">
 
-                        />
+                    <Menu
+
+                      borderless
+                      stackable={true}
+                      fixed="top"
+                      size="massive"
+
+                      inverted
+                    >
+                    {this.items.map(item =>{
+                        return<Menu.Item
+                                name={item.name}
+                                onClick={this.handleItemClick}
+                                active={activeItem===item.name}
+                                color="olive"
+                                position="right"
+                                />
+                    })}
+                    </Menu>
 
 
 
-        })}
-        </Menu>
+        </div>
     );
 
 

@@ -1,11 +1,11 @@
 import React from 'react';
+import { Image,Container } from 'semantic-ui-react';
+import './parallax.css';
+const parallax = () => {
 
-var parallax = () => {
     return (
-        <div>
-            <img src="../../assets/images/landingPage.jpg">
-
-            </img>
+        <div className="outerDiv">
+            <Image src={require('../../assets/images/background.jpg')}  fluid/>
         </div>
     );
 
