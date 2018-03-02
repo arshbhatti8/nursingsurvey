@@ -20,9 +20,9 @@ const HomepageLayout = () => (
                 </Grid.Row>
                 <Grid.Row stretched>
                     <Grid.Column width={16} stretched>
-                        <NukaCarousel>
+                        <NukaCarousel dragging >
                             <div
-                                style={{display: 'inline-block', width: 800,height:500}}>
+                                style={{display: 'inline-block', minWidth: 800,minHeight:500}}>
                                 <Header as='h3' style={{ fontSize: '2em' }}>Here's a gender based ratio</Header>
                                 <GenderChart />
                             </div>
