@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import {Menu,Segment,Responsive,Visibility,Container} from 'semantic-ui-react';
-import Parallax from '../parallax/parallax';
 import PropTypes from 'prop-types';
 import HomepageHeading from '../homepageheading/hompageHeading';
 class desktopContainer extends Component{
@@ -54,7 +53,6 @@ render () {
                         </Menu>
                        <HomepageHeading/>
                    </Segment>
-
            </Visibility>
             {children}
         </Responsive>
@@ -66,3 +64,5 @@ desktopContainer.propTypes = {
     children: PropTypes.node,
 };
 export default desktopContainer;
+
+

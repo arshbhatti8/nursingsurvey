@@ -3,7 +3,7 @@ import ResponsiveContainer from '../responsivecontainer/responsiveContainer';
 import {Segment,Grid,Header,Image,Button,Divider,Container,List} from 'semantic-ui-react';
 import GenderChart from '../charts/genderChart';
 import DepressionChart from '../charts/depressionChart';
-
+import NukaCarousel from 'nuka-carousel';
 
 const HomepageLayout = () => (
     <ResponsiveContainer>
@@ -18,14 +18,20 @@ const HomepageLayout = () => (
                         </p>
                     </Grid.Column>
                 </Grid.Row>
-                <Grid.Row>
-                    <Grid.Column floated='left' width={8}>
-                        <Header as='h3' style={{ fontSize: '2em' }}>Here's a gender based ratio</Header>
-                            <GenderChart/>
-                    </Grid.Column>
-                    <Grid.Column floated='right' width={8}>
-                        <Header as='h3' style={{ fontSize: '2em' }}>Here's the severity of Depression in Men</Header>
-                            <DepressionChart/>
+                <Grid.Row stretched>
+                    <Grid.Column width={16} stretched>
+                        <NukaCarousel>
+                            <div
+                                style={{display: 'inline-block', width: 800,height:500}}>
+                                <Header as='h3' style={{ fontSize: '2em' }}>Here's a gender based ratio</Header>
+                                <GenderChart />
+                            </div>
+                            <div
+                                style={{display: 'inline-block', width: 800,height:500}}>
+                                <Header as='h3' style={{ fontSize: '2em' }}>Here's the severity of Depression in Men</Header>
+                                <DepressionChart/>
+                            </div>
+                        </NukaCarousel>
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
