@@ -1,30 +1,31 @@
 import React from 'react';
 import ResponsiveContainer from '../responsivecontainer/responsiveContainer';
 import {Segment,Grid,Header,Image,Button,Divider,Container,List} from 'semantic-ui-react';
+import GenderChart from '../charts/genderChart';
+import DepressionChart from '../charts/depressionChart';
+
 
 const HomepageLayout = () => (
     <ResponsiveContainer>
         <Segment style={{ padding: '8em 0em' }} vertical>
             <Grid container stackable verticalAlign='middle'>
                 <Grid.Row>
-                    <Grid.Column width={8}>
-                        <Header as='h3' style={{ fontSize: '2em' }}>We Help Companies and Companions</Header>
+                    <Grid.Column
+                        width={16}>
+                        <Header as='h2' style={{ fontSize: '3em' }}>We conducted a survey</Header>
                         <p style={{ fontSize: '1.33em' }}>
-                            We can give your company superpowers to do things that they never thought possible. Let us delight
-                            your customers and empower your needs... through pure data analytics.
-                        </p>
-                        <Header as='h3' style={{ fontSize: '2em' }}>We Make Bananas That Can Dance</Header>
-                        <p style={{ fontSize: '1.33em' }}>
-                            Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.
+                            A total of 100 people participated in this survey.
                         </p>
                     </Grid.Column>
-                    <Grid.Column floated='right' width={6}>
-                        <Image
-                            bordered
-                            rounded
-                            size='large'
-                            src='/assets/images/wireframe/white-image.png'
-                        />
+                </Grid.Row>
+                <Grid.Row>
+                    <Grid.Column floated='left' width={8}>
+                        <Header as='h3' style={{ fontSize: '2em' }}>Here's a gender based ratio</Header>
+                            <GenderChart/>
+                    </Grid.Column>
+                    <Grid.Column floated='right' width={8}>
+                        <Header as='h3' style={{ fontSize: '2em' }}>Here's the severity of Depression in Men</Header>
+                            <DepressionChart/>
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>

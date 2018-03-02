@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Pie,defaults} from 'react-chartjs-2';
+import {Pie} from 'react-chartjs-2';
 import '../parallax/parallax.css';
 
 class genderChart extends Component {
@@ -7,21 +7,18 @@ class genderChart extends Component {
     render(){
         const dData = {
             labels: [
-                'Red',
-                'Green',
-                'Yellow'
+                'Male',
+                'Female',
             ],
             datasets: [{
-                data: [300, 50, 100],
+                data: [70,30],
                 backgroundColor: [
                     '#FF6384',
                     '#36A2EB',
-                    '#FFCE56'
                 ],
                 hoverBackgroundColor: [
                     '#FF6384',
                     '#36A2EB',
-                    '#FFCE56'
                 ]
             }]
         };

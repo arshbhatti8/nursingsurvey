@@ -27,6 +27,7 @@ render () {
                onBottomPassedReverse={this.hideFixedMenu}>
                    <Segment
                        inverted
+                       style={{ minHeight: 700, padding: '1em 0em' }}
                        textAlign='center'
                        vertical>
 
@@ -53,7 +54,7 @@ render () {
                         </Menu>
                        <HomepageHeading/>
                    </Segment>
-                <Parallax/>
+
            </Visibility>
             {children}
         </Responsive>
