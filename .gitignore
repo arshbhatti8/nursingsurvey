@@ -9,6 +9,9 @@
 # production
 /build
 
+#Webstorm Workspace
+.idea/workspace.xml
+
 # misc
 .DS_Store
 .env.local
