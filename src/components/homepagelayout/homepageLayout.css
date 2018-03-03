@@ -1,0 +1,28 @@
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+.Cockpit
+{
+    display: inline-block;
+    min-width: 800px;
+    min-height: 300px;
+}
+    /* Styles */
+}
+
+@media screen
+and (min-device-width: 800px)
+and (max-device-width: 2400px)
+and (-webkit-min-device-pixel-ratio: 1) {
+.Cockpit
+{
+    display: inline-block;
+    width: 800px;
+    height: 800px;
+}
+    /* Styles */
+}
+

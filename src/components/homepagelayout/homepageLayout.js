@@ -19,17 +19,22 @@ const HomepageLayout = () => (
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row stretched>
-                    <Grid.Column width={16} stretched>
+                    <Grid.Column width={16} >
                         <NukaCarousel dragging >
                             <div
-                                style={{display: 'inline-block', minWidth: 800,minHeight:500}}>
+                            style={{
+                                display: 'inline-block',
+                                minWidth: 800,
+                                minHeight:500}}>
                                 <Header as='h3' style={{ fontSize: '2em' }}>Here's a gender based ratio</Header>
-                                <GenderChart />
+                                    <GenderChart />
                             </div>
-                            <div
-                                style={{display: 'inline-block', width: 800,height:500}}>
+                            <div style={{
+                                display: 'inline-block',
+                                minWidth: 800,
+                                minHeight:500}}>
                                 <Header as='h3' style={{ fontSize: '2em' }}>Here's the severity of Depression in Men</Header>
-                                <DepressionChart/>
+                                    <DepressionChart/>
                             </div>
                         </NukaCarousel>
                     </Grid.Column>
@@ -117,3 +122,4 @@ const HomepageLayout = () => (
     </ResponsiveContainer>
 );
 export default HomepageLayout;
+
