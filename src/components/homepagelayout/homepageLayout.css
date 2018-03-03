@@ -1,0 +1,21 @@
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 350px)
+and (max-device-width: 750px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    #charts{
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+    }
+
+}
+
+#charts{
+
+    display: inline-block;
+    width: 800px;
+    height: 500px;
+}
+
+

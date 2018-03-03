@@ -12,7 +12,7 @@ class genderChart extends Component {
             datasets: [{
                 data: [70,30],
                 backgroundColor: [
-                    '#FF6384',
+                    'green',
                     '#36A2EB',
                 ],
                 hoverBackgroundColor: [

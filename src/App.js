@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import HomepageLayout from './components/homepagelayout/homepageLayout';
-import {ResponsiveContainer} from 'semantic-ui-react';
+import Radium from 'radium';
 
 class App extends Component {
 
@@ -15,4 +15,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Radium(App);
