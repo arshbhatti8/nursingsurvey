@@ -11,11 +11,51 @@ and (-webkit-min-device-pixel-ratio: 2) {
 
 }
 
-#charts{
+#charts {
 
     display: inline-block;
     width: 800px;
     height: 500px;
 }
 
+
+.whatIsDepression{
+    background-image: url("../../assets/images/what-is-depression.jpg");
+    /* Full height */
+    height: 768px !important;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.whatIsDepression p {
+    color:white;
+    position: absolute;
+    top:300px;
+    font-size: 2vw;
+}
+.suicide{
+    background-image: url("../../assets/images/suicide.jpg");
+    /* Full height */
+    height: 768px !important;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.suicide h1{
+     color:white;
+     font-size: 6vw;
+ }
+.suicide span{
+    color:lightgreen;
+    font-size: 6vw;
+}
+.suicide p{
+    color:white;
+    font-size: 2vw;
+}
 

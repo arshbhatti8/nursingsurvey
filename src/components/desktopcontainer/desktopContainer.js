@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 import {Menu,Segment,Responsive,Visibility,Container} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import HomepageHeading from '../homepageheading/hompageHeading';
+
+
 class desktopContainer extends Component{
 
 state={activeItem:"Home"};
@@ -33,19 +35,21 @@ render () {
                        <Menu
                           fixed={fixed ? 'top':null}
                           size="large"
-                          inverted={!fixed}
+                          inverted
                           pointing={!fixed}
-                          secondary={!fixed}>
+                          secondary={!fixed}
+                          >
 
                             <Container>
                                 {
-                                    this.items.map(item =>
+                                    this.items.map((item,index) =>
                                     {
                                         return <Menu.Item
                                         inverted
                                         name={item.name}
                                         onClick={this.handleItemClick}
                                         active={activeItem === item.name}
+                                        key={index}
                                         />
                                     })
                                 }

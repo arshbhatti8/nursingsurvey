@@ -1,5 +1,5 @@
 import React , {Component} from 'react';
-import {Responsive, Sidebar,Menu,Segment,Container,Icon,Button} from 'semantic-ui-react';
+import {Responsive, Sidebar,Menu,Segment,Container,Icon} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import HomepageHeading from '../homepageheading/hompageHeading';
 
@@ -20,18 +20,19 @@ class mobileContainer extends Component {
                 <Sidebar.Pushable>
                     <Sidebar
                         as={Menu}
-                        animation='uncover'
+                        animation='overlay'
                         inverted
                         vertical
                         visible={sidebarOpened}>
                         {
-                            this.items.map(item=>{
+                            this.items.map((item,index)=>{
                                 return<Menu.Item
                                       inverted
                                       name={item.name}
                                       as='a'
                                       onClick={this.handleItemClick}
-                                      active={activeItem === item.name}/>
+                                      active={activeItem === item.name}
+                                      key={index}/>
                             })
                         }
                     </Sidebar>

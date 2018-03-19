@@ -1,119 +1,190 @@
 import React from 'react';
 import ResponsiveContainer from '../responsivecontainer/responsiveContainer';
-import {Segment,Grid,Header,Image,Button,Divider,Container,List} from 'semantic-ui-react';
-import GenderChart from '../charts/genderChart';
-import DepressionChart from '../charts/depressionChart';
-import NukaCarousel from 'nuka-carousel';
+import {Segment,Grid,Header,Icon,Button,Divider,Container,List,Modal,Card} from 'semantic-ui-react';
 import './homepageLayout.css';
 import Radium ,{StyleRoot} from 'radium';
+import AllCharts from '../charts/allCharts';
 
 const HomepageLayout = () => {
-    const style = {
-        '@media only screen and (min-device-width: 350px) and (max-device-width: 750px) and (-webkit-min-device-pixel-ratio: 2)':
-            {
-        display: 'inline-block',
-        width: '300px',
-        height: '300px'
-            },
 
-        '@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1)':
-            {
-                display: 'inline-block',
-                width: '800px',
-                height: '500px',
-            }
-    };
+
+const depressionSymptoms=["Feeling Sad","Loss of interest or pleasure in activities once enjoyed","Changes in appetite — weight loss or gain unrelated to dieting",
+                "Trouble sleeping or sleeping too much","Loss of energy or increased fatigue",
+                "Increase in purposeless physical activity (e.g., hand-wringing or pacing) or slowed\n" +
+                "movements and speech.","Feeling worthless or guilty","Difficulty thinking, concentrating or making decisions"];
+
+const talkingSymptoms=["Killing Themselves","Feeling Hopeless","Having no reason to live","Being a burden to others","Feeling trapped","Unbearable pain"];
+
+const behaviorSymptoms=["Increased use of alcohol or drugs","Looking for a way to end their lives, such as searching online for materials or means",
+    "Withdrawing from activities","Isolation from family and friends","Sleeping too much or too little","Visiting or calling people to say goodbye","Giving away prized possesions"];
+
+    const moodSymptoms=["Depression","Anxiety","Loss of Interest","Irritability","Humilitaion","Agitation","Rage"];
+
     return (
         <ResponsiveContainer>
-            <Segment style={{padding: '8em 0em'}} vertical>
-                <Grid container stackable verticalAlign='middle'>
-                    <Grid.Row>
-                        <Grid.Column
-                            width={16}>
-                            <Header as='h2' style={{fontSize: '3em'}}>We conducted a survey</Header>
-                            <p style={{fontSize: '1.33em'}}>
-                                A total of 100 people participated in this survey.
+           <div className='whatIsDepression' style={{padding:'8em 2em'}} >
+               <Grid stackable stretched>
+                <Grid.Row stretched>
+                    <Grid.Column stretched width={16} >
+                            <p>Depression (major depressive disorder) is a common and serious medical illness that negatively affects how you feel,
+                                the way you think and how you act.According to the American Psychiatric Association Depression (major depressive disorder)
+                                is a common and serious medical illness that negatively affects how you feel, the way you think and how you act.
                             </p>
-                        </Grid.Column>
-                    </Grid.Row>
-                    <Grid.Row stretched>
-                        <Grid.Column width={16} stretched>
-                            <StyleRoot>
-                                <NukaCarousel dragging>
-                                    <div
-                                        style={style}>
-                                        <Header
-                                            as='h3'
-                                            style={{fontSize: '2em'}}>
-                                            Here's a gender based ratio</Header>
-                                        <GenderChart/>
-                                    </div>
-                                    <div
-                                        style={style}>
-                                        <Header
-                                            as='h3'
-                                            style={{fontSize: '2em'}}>
-                                            Here's the severity of Depression in Men</Header>
-                                         <DepressionChart/>
-                                    </div>
-                                </NukaCarousel>
-                            </StyleRoot>
-                        </Grid.Column>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Grid.Column textAlign='center'>
-                            <Button size='huge'>Check Them Out</Button>
-                        </Grid.Column>
-                    </Grid.Row>
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
+           </div>
+            <div className='suicide' style={{padding:'8em 2em'}} >
+                <Grid stackable stretched>
+                    <Grid.Column width={7} floated='left'>
+                        <h1>WHAT IS <span>SUICIDE?</span></h1>
+                        <p>According to the CDC, suicide is Death caused by self-directed injurious behavior with
+                            an intent to die as a result of the behavior.</p>
+
+                    </Grid.Column>
                 </Grid>
-            </Segment>
-            <Segment style={{padding: '0em'}} vertical>
-                <Grid celled='internally' columns='equal' stackable>
+            </div>
+            <Segment  style={{padding: '2em'}} vertical>
+                <Header as='h1' style={{fontSize: '4vw'}}>Warning Signs</Header>
+                <Grid celled='internally'  stackable>
                     <Grid.Row textAlign='center'>
-                        <Grid.Column style={{paddingBottom: '5em', paddingTop: '5em'}}>
-                            <Header as='h3' style={{fontSize: '2em'}}>"What a Company"</Header>
-                            <p style={{fontSize: '1.33em'}}>That is what they all say about us</p>
+                        <Grid.Column width={4} style={{paddingBottom: '5em', paddingTop: '0em'}}>
+                            <Header as='h3' style={{fontSize: '2em'}}>Depression</Header>
+                            <Card
+                                image={require('../../assets/images/depression.jpg')}
+                                header='Symptoms of depression'
+                                meta='Click button to expand'
+                                />
+                            <Modal dimmer='blurring' trigger={<Button color='blue'>Show Symptoms</Button>} style={{position:'absolute',top:'50%',left:'18%'}}>
+                                <Modal.Header size='huge'>Depression symptoms can vary from mild to severe and can include the following :</Modal.Header>
+                                <Modal.Content>
+                                    <Modal.Description>
+                                        <Segment inverted>
+                                            <List divided inverted relaxed animated size='big'>
+                                                {
+                                                    depressionSymptoms.map((symptom,index)=>{
+                                                    return <List.Item key={index}>
+                                                        <List.Content>
+                                                            <List.Header>{index+1}. {symptom}</List.Header>
+                                                        </List.Content>
+                                                    </List.Item>
+                                                })}
+                                            </List>
+                                        </Segment>
+                                    </Modal.Description>
+                                </Modal.Content>
+                            </Modal>
                         </Grid.Column>
-                        <Grid.Column style={{paddingBottom: '5em', paddingTop: '5em'}}>
-                            <Header as='h3' style={{fontSize: '2em'}}>"I shouldn't have gone with their
-                                competitor."</Header>
-                            <p style={{fontSize: '1.33em'}}>
-                                <Image avatar src='/assets/images/avatar/large/nan.jpg'/>
-                                <b>Nan</b> Chief Fun Officer Acme Toys
-                            </p>
+                        <Grid.Column width={12} style={{paddingBottom: '5em'}}>
+                            <Grid divided columns={3} stackable>
+                                <Header as='h3' style={{fontSize: '2em'}}>According to the American Foundation of Suicide prevention, Suicide signs and symptoms can
+                                    vary from three different aspects:</Header>
+                                    <Grid.Column>
+                                        <Card
+                                        image={require('../../assets/images/talking.jpg')}
+                                        header='Talking'
+                                        meta='Click button to expand'
+                                        />
+                                        <Modal dimmer='blurring' style={{position:'absolute',top:'50%',left:'18%'}} trigger={<Button color='blue'>Show Symptoms</Button>} >
+                                            <Modal.Header size='huge'>If a person talks about:</Modal.Header>
+                                            <Modal.Content>
+                                                <Modal.Description>
+                                                    <Segment inverted>
+                                                        <List divided inverted relaxed animated size='big'>
+                                                            {
+                                                                talkingSymptoms.map((symptom,index)=>{
+                                                                    return <List.Item key={index}>
+                                                                        <List.Content>
+                                                                            <List.Header>{index+1}. {symptom}</List.Header>
+                                                                        </List.Content>
+                                                                    </List.Item>
+                                                                })}
+                                                        </List>
+                                                    </Segment>
+                                                </Modal.Description>
+                                            </Modal.Content>
+                                        </Modal>
+                                    </Grid.Column>
+                                    <Grid.Column>
+                                    <Card
+                                        image={require('../../assets/images/behavior.jpeg')}
+                                        header='Behavior'
+                                        meta='Click button to expand'/>
+                                        <Modal dimmer='blurring' style={{position:'absolute',top:'50%',left:'18%'}} trigger={<Button color='blue'>Show Symptoms</Button>}>
+                                            <Modal.Header size='huge'>Behaviors that may signal a significant risk are:</Modal.Header>
+                                            <Modal.Content>
+                                                <Modal.Description>
+                                                    <Segment inverted>
+                                                        <List divided inverted relaxed animated size='big'>
+                                                            {
+                                                                behaviorSymptoms.map((symptom,index)=>{
+                                                                    return <List.Item key={index}>
+                                                                        <List.Content>
+                                                                            <List.Header>{index+1}. {symptom}</List.Header>
+                                                                        </List.Content>
+                                                                    </List.Item>
+                                                                })}
+                                                        </List>
+                                                    </Segment>
+                                                </Modal.Description>
+                                            </Modal.Content>
+                                        </Modal>
+                                    </Grid.Column>
+                                    <Grid.Column>
+                                    <Card
+                                        image={require('../../assets/images/mood.jpg')}
+                                        header='Mood'
+                                        meta='Click button to expand'/>
+                                        <Modal dimmer='blurring' style={{position:'absolute',top:'50%',left:'18%'}} trigger={<Button color='blue'>Show Symptoms</Button>} >
+                                            <Modal.Header size='huge'>People who are considering suicide often display one or more of the following moods:</Modal.Header>
+                                            <Modal.Content>
+                                                <Modal.Description>
+                                                    <Segment inverted>
+                                                        <List divided inverted relaxed animated size='big'>
+                                                            {
+                                                                moodSymptoms.map((symptom,index)=>{
+                                                                    return <List.Item key={index}>
+                                                                        <List.Content>
+                                                                            <List.Header>{index+1}. {symptom}</List.Header>
+                                                                        </List.Content>
+                                                                    </List.Item>
+                                                                })}
+                                                        </List>
+                                                    </Segment>
+                                                </Modal.Description>
+                                            </Modal.Content>
+                                        </Modal>
+                                    </Grid.Column>
+
+                            </Grid>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
             </Segment>
             <Segment style={{padding: '8em 0em'}} vertical>
                 <Container text>
-                    <Header as='h3' style={{fontSize: '2em'}}>Breaking The Grid, Grabs Your Attention</Header>
+                    <Header as='h3' style={{fontSize: '2em'}}>What we did:</Header>
                     <p style={{fontSize: '1.33em'}}>
-                        Instead of focusing on content creation and hard work, we have learned how to master the art of
-                        doing
-                        nothing by providing massive amounts of whitespace and generic content that can seem massive,
-                        monolithic
-                        and worth your attention.
+                        We conducted a survey through the internet primarily for college students to understand what
+                        the stress and suicide ratio looks to be in the Bay Area. We took the results from the first 100
+                        surveys and below is our results analyzed and what we concluded with.
                     </p>
-                    <Button as='a' size='large'>Read More</Button>
                     <Divider
                         as='h4'
                         className='header'
                         horizontal
                         style={{margin: '3em 0em', textTransform: 'uppercase'}}
                     >
-                        <a href='#'>Case Studies</a>
+                        <a href='#'>Survey Page</a>
                     </Divider>
-                    <Header as='h3' style={{fontSize: '2em'}}>Did We Tell You About Our Bananas?</Header>
+                    <Header as='h3' style={{fontSize: '2em'}}>Our results</Header>
                     <p style={{fontSize: '1.33em'}}>
-                        Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but it's
-                        really
-                        true.
-                        It took years of gene splicing and combinatory DNA research, but our bananas can really dance.
+                        We collated our results from the survey and to visualize them better, we displayed them as different kinds of charts.
                     </p>
-                    <Button as='a' size='large'>I'm Still Quite Interested</Button>
+                    <Icon name='chevron down' link><a href='charts'/></Icon>
                 </Container>
             </Segment>
+            <AllCharts/>
             <Segment inverted vertical style={{padding: '5em 0em'}}>
                 <Container>
                     <Grid divided inverted stackable>
