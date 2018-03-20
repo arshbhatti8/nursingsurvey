@@ -22,7 +22,7 @@ const behaviorSymptoms=["Increased use of alcohol or drugs","Looking for a way t
 
     return (
         <ResponsiveContainer>
-           <div className='whatIsDepression' style={{padding:'8em 2em'}} >
+           <div className='whatIsDepression' id='definitions' style={{padding:'8em 2em'}} >
                <Grid stackable stretched>
                 <Grid.Row stretched>
                     <Grid.Column stretched width={16} >
@@ -49,7 +49,7 @@ const behaviorSymptoms=["Increased use of alcohol or drugs","Looking for a way t
                 <Grid celled='internally'  stackable>
                     <Grid.Row textAlign='center'>
                         <Grid.Column width={4} style={{paddingBottom: '5em', paddingTop: '0em'}}>
-                            <Header as='h3' style={{fontSize: '2em'}}>Depression</Header>
+                            <Header as='h3'>Depression</Header>
                             <Card
                                 image={require('../../assets/images/depression.jpg')}
                                 header='Symptoms of depression'
@@ -181,36 +181,118 @@ const behaviorSymptoms=["Increased use of alcohol or drugs","Looking for a way t
                     <p style={{fontSize: '1.33em'}}>
                         We collated our results from the survey and to visualize them better, we displayed them as different kinds of charts.
                     </p>
-                    <Icon name='chevron down' link><a href='charts'/></Icon>
+                    <a href='#charts'><Icon name='chevron down' ></Icon>
+                    </a>
                 </Container>
             </Segment>
-            <AllCharts/>
-            <Segment inverted vertical style={{padding: '5em 0em'}}>
+            <div style={{height:'100%!important'}} id='charts'>
+                <StyleRoot><AllCharts/></StyleRoot>
+            </div>
+
+                <Segment className='help' vertical inverted style={{ padding: '1em 0em' }}>
+                    <Header as='h1' style={{fontSize: '4vw'}}>Resources for help</Header>
+                    <Header as='h2' style={{fontSize: '1.5vw'}}>If you or a Loved one are having any of the signs or symptoms noted above PLEASE use any of
+                        the following resources for HELP!</Header>
+                    <Grid divided inverted stackable>
+                        <Grid.Row stretched>
+                            <Grid.Column width={5}  style={{paddingBottom: '5em'}} textAlign='left'>
+                                <Header block as='h3' size='huge' color='green' style={{fontSize: '1.5em'}}>
+                                    California Statewide Resources
+                                </Header><br/><br/>
+                                <List verticalAlign='top' inverted as='ul'>
+                                    <List.Item as='li'>
+                                        <a href='http://www.dhcs.ca.gov/services/MH/Pages/SuicidePrevention.aspx'>California State Suicide Prevention Program</a>
+                                    </List.Item>
+                                    <List.Item as='li'><a href='http://www.eachmindmatters.org'>Each Mind Matters</a></List.Item>
+                                    <List.Item as='li'>Living Works</List.Item>
+                                    <List.Item as='li'><a href='http://www.maketheconnection.net'>Make the Connection</a></List.Item>
+                                    <List.Item as='li'><a href='http://www.reachouthere.com'>Reach out here</a></List.Item>
+                                    <List.Item as='li'><a href='http://www.trevorproject.org'>Trevor Project</a></List.Item>
+                                </List>
+                            </Grid.Column>
+                             <Grid.Column width={5} style={{paddingBottom: '5em'}}   textAlign='left'>
+                                 <Header block as='h3' size='huge' color='green' style={{fontSize: '1.5em'}} >
+                                     Bay Area County Resources
+                                 </Header><br/><br/><br/><br/><br/><br/><br/>
+                                 <List inverted as='ul'>
+                                     <List.Item as='li'><a href="https://www.sccgov.org/sites/mhd/Resources/SP/Pages/default.aspx">
+                                         Santa Clara</a></List.Item>
+                                     <List.Item as='li'><a href='http://www.eachmindmatters.org'>San Fransisco</a></List.Item>
+                                     <List.Item as='li'><a href='http://www.crisis-center.org/24-Hour%20Crisis%20Lines'>Contra Costa</a></List.Item>
+                                     <List.Item as='li'>Marin</List.Item>
+                                     <List.Item as='li'>Alameda</List.Item>
+                                     <List.Item as='li'><a href='http://www.star-vista.org'>San Mateo</a></List.Item>
+                                     <List.Item as='li'>Solano</List.Item>
+                                     <List.Item as='li'>Sonoma</List.Item>
+                                     <List.Item as='li'>Napa</List.Item>
+                                 </List>
+                             </Grid.Column>
+                            <Grid.Column width={5} style={{paddingBottom: '5em'}}  textAlign='left'>
+                                <Header block as='h3' size='medium' color='green' style={{fontSize: '1.5em',margin:'0em'}} >
+                                   National Suicide Prevention Helpline
+                                </Header>
+                                <List verticalAlign='top' inverted as='ul'>
+                                    <List.Item as='li'>Contact : 1-800-273-8255 </List.Item>
+                                    <List.Item as='li'>This free, 24-hour hotline is available to anyone in suicidal crisis or emotional distress. Press 1
+                                        for Veterans assistance. Para español, oprima
+                                    </List.Item>
+                                </List>
+                            </Grid.Column>
+                        </Grid.Row>
+                </Grid>
+                </Segment>
+            <Segment style={{padding: '8em 0em'}} vertical>
+                <Container text>
+                    <Header as='h3' style={{fontSize: '2em'}}>References</Header>
+                    <List inverted as='ul'>
+                        <List.Item as='li'><a href=" https://www.psychiatry.org/patients-families/depression/what-is-depression">
+                            “What Is Depression?” Edited by Ranna Parekh, What Is Depression?, Jan. 2017,
+                            www.psychiatry.org/patients-families/depression/what-is-depression.</a></List.Item>
+                        <List.Item as='li'><a href='https://www.cdc.gov/violenceprevention/suicide/definitions.html'>“Violence Prevention.” Centers for Disease Control and Prevention, Centers for Disease Control
+                            and Prevention, 3 Oct. 2017, www.cdc.gov/violenceprevention/suicide/definitions.html.</a></List.Item>
+                        <List.Item as='li'><a href='http://www.afsp.org/about-suicide/risk-factors-and-warning-
+                            signs/'>“Risk Factors and Warning Signs.” AFSP, afsp.org/about-suicide/risk-factors-and-warning-
+                            signs/.</a></List.Item>
+                        <List.Item as='li'><a href='https://www.suicideispreventable.org'>“Pain Isn't Always Obvious.” Suicide Prevention Awareness | Know the Warning Signs of
+                            Suicidal Behavior, www.suicideispreventable.org/.</a></List.Item>
+                    </List>
+                    <a href='#home'><Icon name='wizard' size='large'></Icon></a>
+                </Container>
+            </Segment>
+            <Segment inverted vertical style={{padding: '5em 0em'}} >
                 <Container>
                     <Grid divided inverted stackable>
                         <Grid.Row>
-                            <Grid.Column width={3}>
-                                <Header inverted as='h4' content='About'/>
-                                <List link inverted>
-                                    <List.Item as='a'>Sitemap</List.Item>
-                                    <List.Item as='a'>Contact Us</List.Item>
-                                    <List.Item as='a'>Religious Ceremonies</List.Item>
-                                    <List.Item as='a'>Gazebo Plans</List.Item>
-                                </List>
-                            </Grid.Column>
-                            <Grid.Column width={3}>
-                                <Header inverted as='h4' content='Services'/>
-                                <List link inverted>
-                                    <List.Item as='a'>Banana Pre-Order</List.Item>
-                                    <List.Item as='a'>DNA FAQ</List.Item>
-                                    <List.Item as='a'>How To Access</List.Item>
-                                    <List.Item as='a'>Favorite X-Men</List.Item>
-                                </List>
+                            <Grid.Column width={5} floated='left'>
+                                <Header inverted as='h2' content='Website made by'/>
+                                <Header inverted as='h2' content='Arsh Bhatti'/>
+                                <a href='https://www.facebook.com/arshbhatti8'>
+                                    <Icon name='facebook square' color='blue' size='huge'/>
+                                </a>
+                                <a href='https://www.github.com/arshbhatti8'>
+                                    <Icon name='github' color='grey' inverted size='huge'/>
+                                </a>
+                                <a href='https://www.linkedin.com/in/arshbhatti'>
+                                    <Icon name='linkedin' color='olive'  size='huge'/>
+                                </a>
+                                <Button
+                                    color='google plus'
+                                    icon='google'
+                                    animated='fade'
+                                    fluid
+                                    style={{fontSize:'2em'}}>
+                                    <Button.Content visible >
+                                        Email
+                                    </Button.Content>
+                                    <Button.Content hidden>
+                                        arsh.bhatti8@gmail.com
+                                    </Button.Content>
+                                </Button>
+
                             </Grid.Column>
                             <Grid.Column width={7}>
-                                <Header as='h4' inverted>Footer Header</Header>
-                                <p>Extra space for a call to action inside the footer that could help re-engage
-                                    users.</p>
+                                <Header as='h2' inverted>About this website</Header>
+                                <p style={{fontSize:'1.5em'}}>This website is made using React with JSX and ES6 syntax. Install React's chrome extension to check out some of the components!</p>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>

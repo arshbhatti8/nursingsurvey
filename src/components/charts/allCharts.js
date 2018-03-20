@@ -2,30 +2,42 @@ import React from 'react';
 import {Grid,Header,Button} from 'semantic-ui-react';
 import GenderChart from './genderChart';
 import DepressionChart from './depressionChart';
+import OverallHealthChart from './overallHealth';
+import DepressionChartFemales from './depressionChartFemales';
+import DailyActivitiesMalesChart from './dailyActivitesMales';
+import DailyActivitiesFemales from './dailyActivitiesFemales';
+import SuicidalIdeationsChart from './suicidalIdeations';
+import TraumaticEventsChart from './traumaticEvents';
+import DrugUsageChart from './drugUsageChart';
 import NukaCarousel from 'nuka-carousel';
 import Radium ,{StyleRoot} from 'radium';
+import './allCharts.css';
 
 
 
 const style = {
-    '@media only screen and (min-device-width: 350px) and (max-device-width: 750px) and (-webkit-min-device-pixel-ratio: 2)':
-        {
-            display: 'inline-block',
-            width: '300px',
-            height: '300px'
-        },
 
-    '@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1)':
+
+    '@media screen and (min-device-width: 1200px) and (max-device-width: 1600px)':
         {
             display: 'inline-block',
             width: '800px',
             height: '500px',
+        },
+    '@media screen and (min-device-width: 320px) and (max-device-width: 736px)':
+        {
+            display: 'inline-block',
+            width: '300px',
+            height: '300px',
         }
+
+
+
 };
 
-var allCharts = () => {
+const allCharts = () => {
     return (
-        <div>
+        <StyleRoot><div>
             <Grid container stackable verticalAlign='middle' style={{padding:'8em 8em'}}>
                 <Grid.Row>
                     <Grid.Column
@@ -38,36 +50,88 @@ var allCharts = () => {
                 </Grid.Row>
                 <Grid.Row stretched>
                     <Grid.Column width={16} stretched>
-                        <StyleRoot>
-                            <NukaCarousel dragging>
-                                <div
-                                    style={style}>
+
+                                <NukaCarousel  dragging>
+                                 <div style={style} 
+                                     >
                                     <Header
                                         as='h3'
                                         style={{fontSize: '2em'}}>
                                         Here's a gender based ratio</Header>
                                     <GenderChart/>
                                 </div>
-                                <div
-                                    style={style}>
+                                 <div style={style} 
+                                     >
                                     <Header
                                         as='h3'
                                         style={{fontSize: '2em'}}>
                                         Here's the severity of Depression in Men</Header>
                                     <DepressionChart/>
                                 </div>
+                                 <div style={style} 
+                                     >
+                                    <Header
+                                        as='h3'
+                                        style={{fontSize: '2em'}}>
+                                        Overall Health for subjects of survey</Header>
+                                    <OverallHealthChart/>
+                                </div>
+                                 <div style={style} 
+                                     >
+                                    <Header
+                                        as='h3'
+                                        style={{fontSize: '2em'}}>
+                                        Severity of Depression in Women</Header>
+                                    <DepressionChartFemales/>
+                                </div>
+
+                                 <div style={style} 
+                                     >
+                                    <Header
+                                        as='h3'
+                                        style={{fontSize: '2em'}}>
+                                        Difficulty Felt with Handling Their Daily Activities</Header>
+                                    <DailyActivitiesMalesChart/>
+                                </div>
+                                 <div style={style} 
+                                     >
+                                    <Header
+                                        as='h3'
+                                        style={{fontSize: '2em'}}>
+                                        Difficulty Felt with Handling Their Daily Activities</Header>
+                                    <DailyActivitiesFemales/>
+                                </div>
+                                 <div style={style} 
+                                     >
+                                    <Header
+                                        as='h3'
+                                        style={{fontSize: '2em'}}>
+                                        Suicidal Ideations</Header>
+                                    <SuicidalIdeationsChart/>
+                                </div>
+                                 <div style={style} 
+                                     >
+                                    <Header
+                                        as='h3'
+                                        style={{fontSize: '2em'}}>
+                                        Traumatic or Difficult Events within the Past 12
+                                        Months</Header>
+                                    <TraumaticEventsChart/>
+                                </div>
+                                 <div style={style} 
+                                     >
+                                    <Header
+                                        as='h3'
+                                        style={{fontSize: '2em'}}>
+                                        Drug Usage in the past 30 days</Header>
+                                    <DrugUsageChart/>
+                                </div>
                             </NukaCarousel>
-                        </StyleRoot>
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row>
-                    <Grid.Column textAlign='center'>
-                        <Button size='huge'>Check Them Out</Button>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
-        </div>
+        </div></StyleRoot>
     );
 
-}
-export default allCharts;
+};
+export default Radium(allCharts);

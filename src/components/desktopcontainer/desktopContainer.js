@@ -9,7 +9,10 @@ class desktopContainer extends Component{
 state={activeItem:"Home"};
 
 items= [{ key: 'Home', name: 'Home'},
-    { key: 'Charts', name: 'Charts'},
+    { key: 'Definitions', name: 'Definitions'},
+    { key: 'Warning Signs', name: 'Warning Signs' },
+    { key: 'Survey Results', name: 'Survey Results' },
+    { key: 'Resources', name: 'Resources' },
     { key: 'References', name: 'References' }];
 
 handleItemClick = (e, { name }) => this.setState({ activeItem: name });
@@ -27,6 +30,7 @@ render () {
                onBottomPassed={this.showFixedMenu}
                onBottomPassedReverse={this.hideFixedMenu}>
                    <Segment
+                       id='home'
                        inverted
                        style={{ minHeight: 700, padding: '1em 0em' }}
                        textAlign='center'
@@ -34,7 +38,7 @@ render () {
 
                        <Menu
                           fixed={fixed ? 'top':null}
-                          size="large"
+                          size="huge"
                           inverted
                           pointing={!fixed}
                           secondary={!fixed}

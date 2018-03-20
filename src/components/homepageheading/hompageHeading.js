@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container,Header,Button,Icon,Image} from 'semantic-ui-react';
+import {Container,Header,Icon} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 
@@ -27,12 +27,9 @@ const homepageHeading = ({mobile}) => (
                 marginTop: mobile? '0.5em' : '1.5em',
             }}
         />
-        <Button
-        primary
-        size='huge'
-        >Facts
-            <Icon name='right arrow'/>
-        </Button>
+
+            <a href='#definitions'><Icon name='chevron down' size='huge'/></a>
+
     </Container>
 
 );
