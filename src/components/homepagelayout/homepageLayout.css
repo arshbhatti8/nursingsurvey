@@ -1,28 +1,46 @@
+/* Portrait and Landscape */
 
+.whatIsDepression{
+    background-image: url("../../assets/images/what-is-depression.jpg");
+    /* Full height */
+    height: 768px !important;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 480px) {
-.Cockpit
-{
-    display: inline-block;
-    min-width: 800px;
-    min-height: 300px;
-}
-    /* Styles */
 }
 
-@media screen
-and (min-device-width: 800px)
-and (max-device-width: 2400px)
-and (-webkit-min-device-pixel-ratio: 1) {
-.Cockpit
-{
-    display: inline-block;
-    width: 800px;
-    height: 800px;
+.whatIsDepression p {
+    color:white;
+    position: absolute;
+    top:300px;
+    font-size: 2vw;
 }
-    /* Styles */
+.suicide{
+    background-image: url("../../assets/images/suicide.jpg");
+    /* Full height */
+    height: 768px !important;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+.suicide h1{
+     color:white;
+     font-size: 6vw;
+ }
+.suicide span{
+    color:lightgreen;
+    font-size: 6vw;
+}
+.suicide p{
+    color:white;
+    font-size: 2vw;
+}
+
+.help li{
+    font-size: 1.5em;
+    color:white;
+}

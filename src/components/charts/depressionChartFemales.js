@@ -12,29 +12,29 @@ class depressionChart extends Component{
                 'Moderate',
                 'Moderately Severe',
                 'Severe',
-                'None',
+                'None'
             ],
             datasets: [{
-                data: [9,10,4,7,4,1],
+                data: [17,28,9,6,3,2],
                 backgroundColor: [
                     '#FF6384',
                     '#36A2EB',
                     '#FFCE56',
-                    '#66ff33',
-                    '#800000',
+                    'green',
+                    'orange',
 
                 ],
                 hoverBackgroundColor: [
                     '#FF6384',
                     '#36A2EB',
                     '#FFCE56',
-                    '#66ff33',
-                    '#800000',
+                    'green',
+                    'orange',
                 ]
             }]
         };
         return <Doughnut
-                data={data} />
+            data={data} />
     }
 }
 export default depressionChart;

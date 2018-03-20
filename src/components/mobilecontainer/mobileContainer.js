@@ -20,18 +20,19 @@ class mobileContainer extends Component {
                 <Sidebar.Pushable>
                     <Sidebar
                         as={Menu}
-                        animation='uncover'
+                        animation='overlay'
                         inverted
                         vertical
                         visible={sidebarOpened}>
                         {
-                            this.items.map(item=>{
+                            this.items.map((item,index)=>{
                                 return<Menu.Item
                                       inverted
                                       name={item.name}
                                       as='a'
                                       onClick={this.handleItemClick}
-                                      active={activeItem === item.name}/>
+                                      active={activeItem === item.name}
+                                      key={index}/>
                             })
                         }
                     </Sidebar>

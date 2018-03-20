@@ -2,12 +2,17 @@ import React,{Component} from 'react';
 import {Menu,Segment,Responsive,Visibility,Container} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import HomepageHeading from '../homepageheading/hompageHeading';
+
+
 class desktopContainer extends Component{
 
 state={activeItem:"Home"};
 
 items= [{ key: 'Home', name: 'Home'},
-    { key: 'Charts', name: 'Charts'},
+    { key: 'Definitions', name: 'Definitions'},
+    { key: 'Warning Signs', name: 'Warning Signs' },
+    { key: 'Survey Results', name: 'Survey Results' },
+    { key: 'Resources', name: 'Resources' },
     { key: 'References', name: 'References' }];
 
 handleItemClick = (e, { name }) => this.setState({ activeItem: name });
@@ -25,6 +30,7 @@ render () {
                onBottomPassed={this.showFixedMenu}
                onBottomPassedReverse={this.hideFixedMenu}>
                    <Segment
+                       id='home'
                        inverted
                        style={{ minHeight: 700, padding: '1em 0em' }}
                        textAlign='center'
@@ -32,20 +38,22 @@ render () {
 
                        <Menu
                           fixed={fixed ? 'top':null}
-                          size="large"
-                          inverted={!fixed}
+                          size="huge"
+                          inverted
                           pointing={!fixed}
-                          secondary={!fixed}>
+                          secondary={!fixed}
+                          >
 
                             <Container>
                                 {
-                                    this.items.map(item =>
+                                    this.items.map((item,index) =>
                                     {
                                         return <Menu.Item
                                         inverted
                                         name={item.name}
                                         onClick={this.handleItemClick}
                                         active={activeItem === item.name}
+                                        key={index}
                                         />
                                     })
                                 }
