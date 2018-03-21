@@ -20,7 +20,7 @@ const homepageHeading = ({mobile}) => (
         <Header
             as='h2'
             inverted
-            content='But here is how many people consider it'
+            content='Slide down to see more info'
             style={{
                 fontSize: mobile? '1.5em' : '1.7em',
                 fontWeight:'normal',

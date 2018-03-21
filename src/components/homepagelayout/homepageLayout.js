@@ -270,7 +270,7 @@ const behaviorSymptoms=["Increased use of alcohol or drugs","Looking for a way t
                         <List.Item as='li'><a target='_blank' href='https://www.suicideispreventable.org'>“Pain Isn't Always Obvious.” Suicide Prevention Awareness | Know the Warning Signs of
                             Suicidal Behavior, www.suicideispreventable.org/.</a></List.Item>
                     </List>
-                    <a target='_blank' href='#Home'><Icon name='wizard' size='large'></Icon></a>
+                    <a  href='#Home'><Icon name='wizard' size='large'></Icon></a>
                 </Container>
             </Segment>
 
