@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 
 const homepageHeading = ({mobile}) => (
-    <Container  text>
+    <Container text>
 
         <Header
         as='h1'
@@ -28,7 +28,7 @@ const homepageHeading = ({mobile}) => (
             }}
         />
 
-            <a href='#definitions'><Icon name='chevron down' size='huge'/></a>
+            <a href='#Definitions'><Icon name='chevron down' size='huge'/></a>
 
     </Container>
 

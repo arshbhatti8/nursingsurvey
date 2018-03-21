@@ -22,7 +22,7 @@ const behaviorSymptoms=["Increased use of alcohol or drugs","Looking for a way t
 
     return (
         <ResponsiveContainer>
-           <div className='whatIsDepression' id='definitions' style={{padding:'8em 2em'}} >
+           <div className='whatIsDepression' id='Definitions' style={{padding:'8em 2em'}} >
                <Grid stackable stretched>
                 <Grid.Row stretched>
                     <Grid.Column stretched width={16} >
@@ -44,7 +44,7 @@ const behaviorSymptoms=["Increased use of alcohol or drugs","Looking for a way t
                     </Grid.Column>
                 </Grid>
             </div>
-            <Segment  style={{padding: '2em'}} vertical>
+            <Segment id='Warning Signs' style={{padding: '4em'}} vertical>
                 <Header as='h1' style={{fontSize: '4vw'}}>Warning Signs</Header>
                 <Grid celled='internally'  stackable>
                     <Grid.Row textAlign='center'>
@@ -181,15 +181,15 @@ const behaviorSymptoms=["Increased use of alcohol or drugs","Looking for a way t
                     <p style={{fontSize: '1.33em'}}>
                         We collated our results from the survey and to visualize them better, we displayed them as different kinds of charts.
                     </p>
-                    <a href='#charts'><Icon name='chevron down' ></Icon>
+                    <a href='#Survey Results'><Icon name='chevron down' ></Icon>
                     </a>
                 </Container>
             </Segment>
-            <div style={{height:'100%!important'}} id='charts'>
+            <div style={{height:'100%!important'}} id='Survey Results'>
                 <StyleRoot><AllCharts/></StyleRoot>
             </div>
 
-                <Segment className='help' vertical inverted style={{ padding: '1em 0em' }}>
+                <Segment id='Resources' className='help' vertical inverted style={{ padding: '4em 0em' }}>
                     <Header as='h1' style={{fontSize: '4vw'}}>Resources for help</Header>
                     <Header as='h2' style={{fontSize: '1.5vw'}}>If you or a Loved one are having any of the signs or symptoms noted above PLEASE use any of
                         the following resources for HELP!</Header>
@@ -241,7 +241,7 @@ const behaviorSymptoms=["Increased use of alcohol or drugs","Looking for a way t
                         </Grid.Row>
                 </Grid>
                 </Segment>
-            <Segment style={{padding: '8em 0em'}} vertical>
+            <Segment id='References' style={{padding: '8em 0em'}} vertical>
                 <Container text>
                     <Header as='h3' style={{fontSize: '2em'}}>References</Header>
                     <List inverted as='ul'>
@@ -256,7 +256,7 @@ const behaviorSymptoms=["Increased use of alcohol or drugs","Looking for a way t
                         <List.Item as='li'><a href='https://www.suicideispreventable.org'>“Pain Isn't Always Obvious.” Suicide Prevention Awareness | Know the Warning Signs of
                             Suicidal Behavior, www.suicideispreventable.org/.</a></List.Item>
                     </List>
-                    <a href='#home'><Icon name='wizard' size='large'></Icon></a>
+                    <a href='#Home'><Icon name='wizard' size='large'></Icon></a>
                 </Container>
             </Segment>
             <Segment inverted vertical style={{padding: '5em 0em'}} >

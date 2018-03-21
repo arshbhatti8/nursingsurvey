@@ -30,7 +30,7 @@ render () {
                onBottomPassed={this.showFixedMenu}
                onBottomPassedReverse={this.hideFixedMenu}>
                    <Segment
-                       id='home'
+                       id='Home'
                        inverted
                        style={{ minHeight: 700, padding: '1em 0em' }}
                        textAlign='center'
@@ -49,7 +49,9 @@ render () {
                                     this.items.map((item,index) =>
                                     {
                                         return <Menu.Item
+                                        as ='a'
                                         inverted
+                                        href={'#'+item.name}
                                         name={item.name}
                                         onClick={this.handleItemClick}
                                         active={activeItem === item.name}
