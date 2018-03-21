@@ -4,15 +4,13 @@ import PropTypes from 'prop-types';
 import HomepageHeading from '../homepageheading/hompageHeading';
 
 
+
 class desktopContainer extends Component{
 
 state={activeItem:"Home"};
 
 items= [{ key: 'Home', name: 'Home'},
-    { key: 'Definitions', name: 'Definitions'},
-    { key: 'Warning Signs', name: 'Warning Signs' },
     { key: 'Survey Results', name: 'Survey Results' },
-    { key: 'Resources', name: 'Resources' },
     { key: 'References', name: 'References' }];
 
 handleItemClick = (e, { name }) => this.setState({ activeItem: name });
@@ -41,8 +39,7 @@ render () {
                           size="huge"
                           inverted
                           pointing={!fixed}
-                          secondary={!fixed}
-                          >
+                          secondary={!fixed}>
 
                             <Container>
                                 {
